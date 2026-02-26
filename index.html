@@ -183,7 +183,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="VidTune thumbnail example: jazz solo piano – animated character at a piano with warm jazz-style visual treatment">
                   <source src="static/samples/jazz_solo_piano.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -201,7 +202,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="VidTune thumbnail example: electronic synth – animated character with synthesizer and bright electronic visual effects">
                   <source src="static/samples/electronic_synth.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -219,7 +221,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="VidTune thumbnail example: ukulele folk – animated character strumming a ukulele with light, cheerful visual style">
                   <source src="static/samples/ukulele_folk.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -237,7 +240,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="VidTune thumbnail example: intense piano – animated character playing piano with high-energy, dramatic visual effects">
                   <source src="static/samples/intense_piano.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -264,6 +268,7 @@
         <!-- Crop container: hides 8% left/right and ~10% top/bottom, centered with flexbox -->
         <div style="overflow: hidden; border-radius: 8px; display: flex; justify-content: center;">
           <video autoplay loop muted playsinline
+            aria-label="Animated walkthrough of VidTune: a user selects a video scene, receives prompt suggestions, expands a prompt to generate four music candidates each shown with an animated contextual thumbnail, and previews tracks in sync with the video"
             style="display: block; width: 119%; flex-shrink: 0; margin-top: -6.7%; margin-bottom: -6.7%;">
             <source src="static/videos/teaser_gif.mov" type="video/mp4">
             Your browser does not support the video tag.
@@ -307,7 +312,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <img src="static/images/main_interface_plus.png" width="95%"
-            alt='VidTune system pipeline showing how contextual thumbnails are generated from video and music tracks'            /><br/><br/>
+            alt="Full VidTune interface showing the video player and timeline (A–C), prompt suggestion panel (D), four candidate music tracks with animated contextual thumbnails (E), hover keywords (F), fit check (G), natural-language edit controls (H), filter and search panel (I), and the music map (J)"            /><br/><br/>
             <h3 class="subtitle">
               The video player and timeline let users choose a scene to add music and preview candidates in sync with the video (A-C). VidTune surfaces prompt suggestions based on the selected scene and user goal (D), then expands the prompt to generate 4 candidates with contextual thumbnails (E). On hover, users see reusable prompt keywords (F) and a fit check (G). Users can iterate with natural-language-edits (H), organize generations via filter/search (I), or view a music map for similarity-based exploration (J).
             </h3>
@@ -317,7 +322,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths"><br/>
             <img src="static/images/video_thumbnails4.png" width="100%"
-            alt='Qualitative examples of VidTune contextual thumbnails'
+            alt="Four animated contextual thumbnail frames sampled at 0.5 FPS, showing how the illustrated character switches instruments (A, B), movements change with tempo (C), and visual effects reflect energy level (D)"
             /><br/><br/>
             <h3 class="subtitle">
               VidTune's animated thumbnail sampled at 0.5 FPS. As the thumbnail animates, the character switches to instruments that enter later in the audio (A, B), movements convey rough tempo (C), and visual effects convey energy (D).
@@ -328,7 +333,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths"><br/>
             <img src="static/images/music_map3.png" width="60%"
-            alt='VidTune prompt expansion and refinement workflow'
+            alt="2D music map scatterplot where each dot represents a generated track positioned by audio-embedding similarity; a dashed line traces the sequence of tracks added to the current video, with a multi-select region highlighted for the Blend feature"
             /><br/><br/>
             <h3 class="subtitle">
               VidTune's Music Map arranges generated tracks in a 2D space by audio-embedding similarity, revealing families of related music at a glance. A dashed path shows the sequence of tracks added to the current video. Users can multi-select tracks and use Blend to generate similar variations.
@@ -350,7 +355,8 @@
       <h2 class="title is-3">Pipeline</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <img src="static/images/thumbnail_pipeline3.png" width="100%" /><br><br>
+          <img src="static/images/thumbnail_pipeline3.png" width="100%"
+            alt="Pipeline diagram: a user video feeds into subject extraction and description to form a base prompt; generated music is analyzed for valence, energy, genre, and instruments which are mapped to visual cues; base and style prompts are fused to produce static and animated contextual thumbnails" /><br><br>
           <h2 class="subtitle has-text-centered">
             From a user video, VidTune extracts an anchor subject and description to form a base prompt grounded in the footage. It analyzes the generated music to infer musical attributes, maps them to visual cues, and fuses these into a style prompt. The fused prompt is used to generate static and animated thumbnails that reflect both the video context and the music.
         </h2>
@@ -381,7 +387,7 @@
               Each row shows 4 alternative AI-generated music tracks for the same video, illustrated with VidTune’s thumbnails.<br>Click the speaker icon to unmute a track and compare how different music changes the feel of the video.
             </p>
           </div>
-        </div>
+        </div>        
       </div>
 
       <div class="container is-max-desktop" style="margin-top: 1rem;">
@@ -389,14 +395,33 @@
         <!-- Row 1: uplifting piano -->
         <div style="margin-bottom: 1rem;">
           <h3 class="subtitle is-5" style="text-align: left; margin-bottom: 0.5rem; font-weight: 500; font-style: italic;">
-            "Uplifting piano music for busy morning scenes"
+            "Positive, optimistic music for busy morning scenes"
           </h3>
         </div>
         <div class="columns is-multiline" style="margin-bottom: 2rem;">
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Morning scene with orchestral swell music candidate – sweeping strings and brass visual treatment">
+                  <source src="static/samples/orchestral_swell.mp4" type="video/mp4">
+                </video>
+                <audio class="example-audio" loop>
+                  <source src="static/samples/orchestral_swell.mp3" type="audio/mpeg">
+                </audio>
+                <div class="video-overlay">
+                  <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
+                    <i class="fas fa-volume-mute"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div class="video-example-card">
+              <div class="video-wrapper">
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Morning scene with jazz solo piano music candidate – warm piano with jazz visual treatment">
                   <source src="static/samples/jazz_solo_piano.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -413,7 +438,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Morning scene with electronic synth music candidate – energetic synth with bright electronic visual effects">
                   <source src="static/samples/electronic_synth.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -430,28 +456,12 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Morning scene with ukulele folk music candidate – light strumming with cheerful folk visual style">
                   <source src="static/samples/ukulele_folk.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
                   <source src="static/samples/ukulele_folk.mp3" type="audio/mpeg">
-                </audio>
-                <div class="video-overlay">
-                  <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
-                    <i class="fas fa-volume-mute"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="video-example-card">
-              <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
-                  <source src="static/samples/intense_piano.mp4" type="video/mp4">
-                </video>
-                <audio class="example-audio" loop>
-                  <source src="static/samples/intense_piano.mp3" type="audio/mpeg">
                 </audio>
                 <div class="video-overlay">
                   <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
@@ -473,41 +483,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
-                  <source src="static/samples/vibrant_music_for_paris_at_night1.mp4" type="video/mp4">
-                </video>
-                <audio class="example-audio" loop>
-                  <source src="static/samples/vibrant_music1.mp3" type="audio/mpeg">
-                </audio>
-                <div class="video-overlay">
-                  <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
-                    <i class="fas fa-volume-mute"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="video-example-card">
-              <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
-                  <source src="static/samples/vibrant_music_for_paris_at_night2.mp4" type="video/mp4">
-                </video>
-                <audio class="example-audio" loop>
-                  <source src="static/samples/vibrant_music2.mp3" type="audio/mpeg">
-                </audio>
-                <div class="video-overlay">
-                  <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
-                    <i class="fas fa-volume-mute"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="video-example-card">
-              <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Paris at night scene – vibrant music candidate 3">
                   <source src="static/samples/vibrant_music_for_paris_at_night3.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -524,7 +501,44 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Paris at night scene – vibrant music candidate 1">
+                  <source src="static/samples/vibrant_music_for_paris_at_night1.mp4" type="video/mp4">
+                </video>
+                <audio class="example-audio" loop>
+                  <source src="static/samples/vibrant_music1.mp3" type="audio/mpeg">
+                </audio>
+                <div class="video-overlay">
+                  <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
+                    <i class="fas fa-volume-mute"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div class="video-example-card">
+              <div class="video-wrapper">
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Paris at night scene – vibrant music candidate 2">
+                  <source src="static/samples/vibrant_music_for_paris_at_night2.mp4" type="video/mp4">
+                </video>
+                <audio class="example-audio" loop>
+                  <source src="static/samples/vibrant_music2.mp3" type="audio/mpeg">
+                </audio>
+                <div class="video-overlay">
+                  <button class="audio-toggle-button" onclick="toggleAudio(this); event.stopPropagation();">
+                    <i class="fas fa-volume-mute"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div class="video-example-card">
+              <div class="video-wrapper">
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Paris at night scene – vibrant music candidate 4">
                   <source src="static/samples/vibrant_music_for_paris_at_night4.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -550,7 +564,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Children's scene – music candidate 1">
                   <source src="static/samples/childrens_music1.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -567,7 +582,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Children's scene – music candidate 2">
                   <source src="static/samples/childrens_music2.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -584,7 +600,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Children's scene – music candidate 3">
                   <source src="static/samples/childrens_music3.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -601,7 +618,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Children's scene – music candidate 4">
                   <source src="static/samples/childrens_music4.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -621,13 +639,14 @@
         <div style="margin-bottom: 1rem; margin-top: 1rem;">
           <h3 class="subtitle is-5" style="text-align: left; margin-bottom: 0.5rem; font-weight: 500; font-style: italic;">
             "Happy goodbye"
-          </h3>
+            </h3>
         </div>
         <div class="columns is-multiline" style="margin-bottom: 2rem;">
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Farewell scene – happy goodbye music candidate 1">
                   <source src="static/samples/happy_goodbye1.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -644,7 +663,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Farewell scene – happy goodbye music candidate 2">
                   <source src="static/samples/happy_goodbye2.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -661,7 +681,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Farewell scene – happy goodbye music candidate 3">
                   <source src="static/samples/happy_goodbye3.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -678,7 +699,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Farewell scene – happy goodbye music candidate 4">
                   <source src="static/samples/happy_goodbye4.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -704,7 +726,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Action scene – suspenseful chase music candidate 1">
                   <source src="static/samples/suspenseful_chase1.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -721,7 +744,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Action scene – suspenseful chase music candidate 2">
                   <source src="static/samples/suspenseful_chase2.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -738,7 +762,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Action scene – suspenseful chase music candidate 3">
                   <source src="static/samples/suspenseful_chase3.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -755,7 +780,8 @@
           <div class="column is-one-quarter">
             <div class="video-example-card">
               <div class="video-wrapper">
-                <video class="example-video" autoplay loop muted playsinline>
+                <video class="example-video" autoplay loop muted playsinline
+                  aria-label="Action scene – suspenseful chase music candidate 4">
                   <source src="static/samples/suspenseful_chase4.mp4" type="video/mp4">
                 </video>
                 <audio class="example-audio" loop>
@@ -771,22 +797,33 @@
           </div>
         </div>
 
-      </div>
     </div>
-  </section>
+  </div>
+</section>
   <!-- End Full Video Examples Section -->
 
-  
+
    <section class="hero is-small" style="margin-top: 2rem;">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3">Preview Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Update with VidTune demo video URL when available -->
+            <iframe src="https://www.youtube.com/embed/mPHhOOS89uE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <br/><br/>
       <h2 class="title is-3">Demo Video</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
             <!-- Update with VidTune demo video URL when available -->
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/RZ31Xbr4c7g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
